@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block body %}
+<body class="registrar">
+    <main class="container">
+        <section class="report row align-items-center justify-content-center">
+            <div class="col-sm-10">
+                <h4>Ingreso Usuarios</h4>
+                <div method="post">
+                    <div class="col">
+                        <div class="crud-form">
+                            <div class="row align-items-center">
+                                <form action="" method="post">
+                                    <div class="form-group row">
+                                        <label for="inputText" class="col-sm-3 col-form-label">{{ form.nombre.label }}</label>
+                                        <div class="col-sm-6">
+                                        {{ form.nombre(class_='form-control', size=64) }}
+                                        {% for error in form.nombre.errors %}
+                                            <div class='alert alert-danger' role='alert'>[{{ error }}]</div>
+                                        {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputText" class="col-sm-3 col-form-label">{{ form.apellido.label }}</label>
+                                        <div class="col-sm-6">
+                                        {{ form.apellido(class_='form-control', size=32) }}
+                                        {% for error in form.apellido.errors %}
+                                            <span style="color:red;">[{{ error }}]</span>
+                                        {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                        {{ form.hidden_tag() }}
+                                        <button href={{ form.submit(class_="btn btn-success" ) }} Ingresar <i class="fas fa-plus-square"></i></button>
+                                    </div>
+                                  </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block body %}
+<body class="listar">
+    <main class="container">
+        <section class="report row align-items-center justify-content-center">
+            <div class="col-sm-10">
+                <div class="Usuario-Form">
+                    <div class="container">
+                        <h4>Usuarios</h4>
+                        <form action="" method="post">
+                            <div class="row justify-content-star">
+                                <div class="col-sm-12">
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                            <a href="{{ url_for('create', create=create) }}">
+                                                <button type="button" class="btn btn-success">Agregar <span><i class="fas fa-address-card" ></i></span></button></a>
+                                        </div>
+                                    </div>
+                                {% for usuario in usuario %}
+                                    <div class="form-group row">
+                                        <div class="col-sm-8">
+                                            <div>Nombre: {{ usuario.nombre }}</div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div>Apellido: {{ usuario.apellido }}</div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <a href="{{ url_for('edit', usuario_id=usuario.id) }}">
+                                                <button type="button" class="btn btn-primary">Editar <span><i class="fa fa-edit" ></i></span></button></a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+{% endblock %}

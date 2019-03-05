@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crud Flask</title>
+    <script src="{{ url_for('static', filename='vendor/js/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/css/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='vendor/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+</head>
+<body>
+    <main class="container">
+        <div class="navbar navbar-expand-md navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{ url_for('usuario')}}">
+                Volver
+            </a>
+        </div>
+    </main>
+
+    {% block body %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+</body>
+</html>
